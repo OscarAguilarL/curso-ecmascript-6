@@ -120,3 +120,39 @@ const helloPromise = () => {
 helloPromise()
   .then(response => console.log(response))
   .catch(error => console.log(error));
+
+// Clase: Clases, modulos y generadores
+class Calculator {
+  constructor() {
+    this.valueA = 0;
+    this.valueB = 0;
+  }
+
+  sumar(valueA, valueB) {
+    this.valueA = valueA;
+    this.valueB = valueB;
+    return this.valueA + this.valueB;
+  }
+}
+
+const calc = new Calculator();
+console.log(calc.sumar(4, 2));
+
+// Modulos
+import hello from './module';
+hello();
+
+// Generadores
+function* helloWorld() {
+  if (true) {
+    yield 'Hello, ';
+  }
+  if (true) {
+    yield 'World';
+  }
+}
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
